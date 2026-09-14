@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#06372d">
+  <meta name="description" content="Wedding invitation for Morris Anderson and Roberta Bernard — October 18, 2026.">
+  <title>Morris & Roberta | Wedding Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --emerald-950:#03261f;
+      --emerald-900:#06372d;
+      --emerald-800:#0a4a3b;
+      --emerald-700:#0f5d4b;
+      --gold:#d5ad55;
+      --gold-soft:#f0d58b;
+      --burnt:#b65f30;
+      --burnt-dark:#8f4424;
+      --ivory:#f8f1e3;
+      --cream:#fffaf0;
+      --ink:#18372f;
+      --shadow:0 24px 70px rgba(0,0,0,.28);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(213,173,85,.08), transparent 22%),
+        radial-gradient(circle at 88% 16%, rgba(182,95,48,.08), transparent 26%),
+        linear-gradient(180deg,var(--emerald-950),var(--emerald-900) 42%,#052e26);
+      color:var(--ivory);
+      font-family:"Cormorant Garamond",Georgia,serif;
+      overflow-x:hidden;
+    }
+
+    body.locked{overflow:hidden}
+    a{color:inherit}
+
+    /* ENVELOPE INTRO */
+    #intro{
+      position:fixed;
+      inset:0;
+      z-index:1000;
+      display:grid;
+      place-items:center;
+      padding:24px;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(213,173,85,.15), transparent 26%),
+        linear-gradient(145deg,#03261f,#0a493b 55%,#021d18);
+      transition:opacity .85s ease,visibility .85s ease;
+    }
+
+    #intro.opened{
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+    }
+
+    .intro-inner{
+      width:min(92vw,560px);
+      text-align:center;
+      position:relative;
+      z-index:2;
+    }
+
+    .pretitle{
+      font-family:Montserrat,sans-serif;
+      font-size:.68rem;
+      text-transform:uppercase;
+      letter-spacing:.28em;
+      color:var(--gold-soft);
+      margin-bottom:24px;
+    }
+
+    .envelope-wrap{
+      position:relative;
+      width:100%;
+      aspect-ratio:1.55/1;
+      perspective:1200px;
+      cursor:pointer;
+      filter:drop-shadow(0 28px 45px rgba(0,0,0,.38));
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .envelope{
+      position:absolute;
+      inset:0;
+      border-radius:14px;
+      overflow:hidden;
+      background:linear-gradient(135deg,#0d5a49,#06372d);
+      border:1px solid rgba(240,213,139,.45);
+    }
+
+    .letter-preview{
+      position:absolute;
+      left:7%;
+      right:7%;
+      top:8%;
+      bottom:8%;
+      z-index:1;
+      border-radius:10px;
+      background:linear-gradient(180deg,#fffaf0,#efe2cb);
+      color:var(--emerald-900);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      transition:transform 1.05s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .letter-preview .small{
+      font-family:Montserrat,sans-serif;
+      font-size:.56rem;
+      letter-spacing:.24em;
+      text-transform:uppercase;
+    }
+
+    .letter-preview .names{
+      font-family:"Great Vibes",cursive;
+      font-size:clamp(2.4rem,9vw,4.25rem);
+      color:var(--burnt-dark);
+      line-height:1;
+      margin:10px 0 4px;
+    }
+
+    .letter-preview .date{
+      font-size:.95rem;
+      letter-spacing:.12em;
+    }
+
+    .flap{
+      position:absolute;
+      inset:0;
+      z-index:5;
+      transform-origin:50% 0%;
+      transform-style:preserve-3d;
+      transition:transform 1s cubic-bezier(.2,.75,.15,1);
+      clip-path:polygon(0 0,100% 0,50% 64%);
+      background:linear-gradient(160deg,#12604e,#06372d);
+    }
+
+    .envelope::before,
+    .envelope::after{
+      content:"";
+      position:absolute;
+      bottom:-1px;
+      width:72%;
+      height:86%;
+      background:#0a493b;
+      z-index:2;
+    }
+
+    .envelope::before{
+      left:-16%;
+      clip-path:polygon(0 100%,100% 0,100% 100%);
+    }
+
+    .envelope::after{
+      right:-16%;
+      clip-path:polygon(0 0,100% 100%,0 100%);
+    }
+
+    .seal{
+      position:absolute;
+      z-index:8;
+      left:50%;
+      top:59%;
+      translate:-50% -50%;
+      width:80px;
+      height:80px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:
+        radial-gradient(circle at 35% 27%,#f0d58b,#d0a547 44%,#a77b2c 76%,#855f20);
+      color:#0a4437;
+      font-family:"Great Vibes",cursive;
+      font-size:1.75rem;
+      border:2px solid rgba(255,246,206,.62);
+      box-shadow:0 10px 25px rgba(0,0,0,.3),inset 0 0 0 4px rgba(95,57,13,.15);
+      transition:transform .45s ease,opacity .45s ease;
+    }
+
+    .envelope-wrap.is-opening .flap{
+      transform:rotateX(178deg);
+      z-index:0;
+    }
+
+    .envelope-wrap.is-opening .seal{
+      transform:scale(.7);
+      opacity:0;
+    }
+
+    .envelope-wrap.is-opening .letter-preview{
+      transform:translateY(-44%);
+    }
+
+    .tap-label{
+      margin-top:28px;
+      font-family:Montserrat,sans-serif;
+      font-size:.72rem;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      color:var(--gold-soft);
+      animation:pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse{50%{opacity:.5}}
+
+    /* MAIN */
+    main{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity 1s ease .1s,transform 1s ease .1s;
+    }
+
+    main.ready{
+      opacity:1;
+      transform:none;
+    }
+
+    .hero{
+      position:relative;
+      min-height:100svh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:86px 22px 72px;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 18% 20%,rgba(182,95,48,.13),transparent 24%),
+        radial-gradient(circle at 82% 72%,rgba(213,173,85,.09),transparent 25%);
+    }
+
+    .gold-frame{
+      position:absolute;
+      inset:20px;
+      border:1px solid rgba(213,173,85,.42);
+      border-radius:28px;
+      pointer-events:none;
+    }
+
+    .gold-frame::before,
+    .gold-frame::after{
+      content:"✦";
+      position:absolute;
+      left:50%;
+      translate:-50%;
+      padding:0 10px;
+      color:var(--gold);
+      font-size:15px;
+      background:var(--emerald-950);
+    }
+
+    .gold-frame::before{top:-10px}
+    .gold-frame::after{bottom:-10px}
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      width:min(700px,100%);
+    }
+
+    .eyebrow{
+      font-family:Montserrat,sans-serif;
+      font-size:.68rem;
+      letter-spacing:.24em;
+      text-transform:uppercase;
+      color:var(--gold-soft);
+      margin-bottom:22px;
+    }
+
+    .formal-names{
+      font-size:clamp(1.15rem,4.2vw,1.5rem);
+      line-height:1.5;
+      color:#f7edda;
+      margin:0 auto 12px;
+    }
+
+    h1{
+      margin:8px 0 14px;
+      font-family:"Great Vibes",cursive;
+      font-weight:400;
+      font-size:clamp(4rem,17vw,7.7rem);
+      line-height:.92;
+      color:var(--gold-soft);
+      text-shadow:0 4px 18px rgba(0,0,0,.22);
+    }
+
+    h1 .amp{
+      display:block;
+      color:var(--burnt);
+      font-size:.55em;
+      margin:.03em 0;
+    }
+
+    .invitation-copy{
+      max-width:620px;
+      margin:20px auto 0;
+      font-size:clamp(1.05rem,4vw,1.35rem);
+      line-height:1.68;
+      color:#f1e6d5;
+    }
+
+    .scroll-cue{
+      margin-top:44px;
+      font-family:Montserrat,sans-serif;
+      font-size:.62rem;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:rgba(240,213,139,.74);
+    }
+
+    .chev{
+      display:block;
+      margin-top:8px;
+      font-size:1.4rem;
+      animation:down 1.8s ease-in-out infinite;
+    }
+
+    @keyframes down{50%{transform:translateY(7px)}}
+
+    section{
+      position:relative;
+      padding:88px 22px;
+    }
+
+    .section-inner{
+      width:min(760px,100%);
+      margin:auto;
+      text-align:center;
+    }
+
+    .ornament{
+      color:var(--gold);
+      letter-spacing:.45em;
+      margin-bottom:22px;
+    }
+
+    .section-kicker{
+      font-family:Montserrat,sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.24em;
+      color:var(--burnt);
+      font-size:.7rem;
+      font-weight:600;
+    }
+
+    h2{
+      margin:12px 0 34px;
+      font-size:clamp(2.5rem,10vw,4.8rem);
+      line-height:1;
+      font-weight:500;
+      color:var(--gold-soft);
+    }
+
+    .event-card{
+      width:min(560px,100%);
+      margin:auto;
+      padding:42px 26px;
+      background:linear-gradient(180deg,rgba(255,250,240,.99),rgba(245,235,215,.99));
+      color:var(--ink);
+      border-radius:30px;
+      border:1px solid rgba(213,173,85,.46);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .event-card::before,
+    .event-card::after{
+      content:"";
+      position:absolute;
+      width:110px;
+      height:110px;
+      border:1px solid rgba(182,95,48,.23);
+      border-radius:50%;
+    }
+
+    .event-card::before{top:-60px;left:-55px}
+    .event-card::after{bottom:-65px;right:-55px}
+
+    .day{
+      font-family:Montserrat,sans-serif;
+      font-size:.68rem;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      color:var(--burnt-dark);
+    }
+
+    .date-big{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      margin:12px 0 5px;
+    }
+
+    .date-big .month,
+    .date-big .year{
+      font-size:1rem;
+      text-transform:uppercase;
+      letter-spacing:.15em;
+    }
+
+    .date-big .number{
+      font-size:5.7rem;
+      line-height:.9;
+      color:var(--emerald-800);
+    }
+
+    .time{
+      margin:16px 0 26px;
+      font-family:"Great Vibes",cursive;
+      font-size:2.5rem;
+      color:var(--burnt-dark);
+    }
+
+    .venue{
+      margin-bottom:8px;
+      font-size:1.55rem;
+      font-weight:600;
+      color:var(--emerald-900);
+    }
+
+    .address{
+      max-width:390px;
+      margin:0 auto 22px;
+      font-size:1.1rem;
+      line-height:1.5;
+    }
+
+    .directions{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:11px 17px;
+      border:1px solid rgba(6,55,45,.28);
+      border-radius:999px;
+      text-decoration:none;
+      font-family:Montserrat,sans-serif;
+      font-size:.66rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      transition:.25s ease;
+    }
+
+    .directions:hover{
+      background:var(--emerald-900);
+      color:white;
+    }
+
+    /* PHOTO */
+    .photo-section{
+      padding-top:48px;
+      padding-bottom:48px;
+    }
+
+    .photo-frame{
+      position:relative;
+      width:min(520px,100%);
+      margin:auto;
+      aspect-ratio:899/1599;
+      overflow:hidden;
+      border-radius:34px;
+      border:1px solid rgba(213,173,85,.52);
+      box-shadow:var(--shadow);
+      background:var(--emerald-900);
+    }
+
+    .photo-frame img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      display:block;
+      background:#fff;
+    }
+
+    .photo-caption{
+      position:relative;
+      z-index:2;
+      margin-top:20px;
+      color:var(--gold-soft);
+      font-family:"Great Vibes",cursive;
+      font-size:2.25rem;
+      text-shadow:0 3px 14px rgba(0,0,0,.35);
+    }
+
+    /* RECEPTION */
+    .reception{
+      background:
+        radial-gradient(circle at 50% 42%,rgba(182,95,48,.11),transparent 30%);
+    }
+
+    /* SCRIPTURE */
+    .scripture{
+      overflow:hidden;
+      background:var(--ivory);
+      color:var(--emerald-900);
+    }
+
+    .scripture::before{
+      content:"“";
+      position:absolute;
+      top:-90px;
+      left:1vw;
+      font-size:25rem;
+      line-height:1;
+      color:rgba(182,95,48,.07);
+      font-family:Georgia,serif;
+    }
+
+    .scripture blockquote{
+      position:relative;
+      z-index:2;
+      max-width:760px;
+      margin:0 auto;
+      font-size:clamp(1.7rem,7vw,3.45rem);
+      line-height:1.3;
+      font-style:italic;
+    }
+
+    .scripture cite{
+      display:block;
+      margin-top:28px;
+      font-family:Montserrat,sans-serif;
+      font-style:normal;
+      font-size:.7rem;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      color:var(--burnt-dark);
+    }
+
+    /* CLOSING */
+    .closing{
+      min-height:78svh;
+      display:grid;
+      place-items:center;
+      padding-top:100px;
+      padding-bottom:100px;
+      overflow:hidden;
+    }
+
+    .closing h2{
+      max-width:780px;
+      margin-left:auto;
+      margin-right:auto;
+      font-size:clamp(2.8rem,11vw,6.2rem);
+      line-height:1.03;
+    }
+
+    .closing h2 em{
+      display:block;
+      margin-top:14px;
+      font-family:"Great Vibes",cursive;
+      font-style:normal;
+      font-weight:400;
+      color:var(--burnt);
+      font-size:1.05em;
+    }
+
+    .signature{
+      margin-top:28px;
+      font-family:"Great Vibes",cursive;
+      font-size:2.7rem;
+      color:var(--gold-soft);
+    }
+
+    .footer-date{
+      margin-top:12px;
+      font-family:Montserrat,sans-serif;
+      font-size:.64rem;
+      text-transform:uppercase;
+      letter-spacing:.2em;
+      color:rgba(247,240,223,.65);
+    }
+
+    /* SCROLL REVEAL */
+    .fade-up{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .82s ease,transform .82s ease;
+    }
+
+    .fade-up.visible{
+      opacity:1;
+      transform:none;
+    }
+
+
+
+    /* GIFT / BANKING DETAILS */
+    .gift-section{
+      padding-top:72px;
+      padding-bottom:72px;
+      background:
+        radial-gradient(circle at 50% 50%,rgba(213,173,85,.08),transparent 36%);
+    }
+
+    .gift-card{
+      width:min(600px,100%);
+      margin:auto;
+      padding:36px 26px;
+      border:1px solid rgba(213,173,85,.42);
+      border-radius:28px;
+      background:rgba(255,250,240,.05);
+      box-shadow:0 22px 55px rgba(0,0,0,.16);
+    }
+
+    .gift-card p{
+      max-width:480px;
+      margin:0 auto 24px;
+      font-size:1.12rem;
+      line-height:1.6;
+      color:#f1e6d5;
+    }
+
+    .bank-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      padding:13px 20px;
+      border:1px solid rgba(213,173,85,.62);
+      border-radius:999px;
+      color:var(--emerald-950);
+      background:linear-gradient(180deg,var(--gold-soft),var(--gold));
+      box-shadow:0 10px 28px rgba(0,0,0,.16);
+      cursor:pointer;
+      font-family:Montserrat,sans-serif;
+      font-size:.69rem;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      transition:transform .2s ease,box-shadow .2s ease;
+    }
+
+    .bank-button:hover{
+      transform:translateY(-1px);
+      box-shadow:0 13px 32px rgba(0,0,0,.2);
+    }
+
+    .bank-modal{
+      position:fixed;
+      inset:0;
+      z-index:1300;
+      display:grid;
+      place-items:center;
+      padding:20px;
+      background:rgba(2,20,16,.78);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+      transition:opacity .28s ease,visibility .28s ease;
+    }
+
+    .bank-modal.show{
+      opacity:1;
+      visibility:visible;
+      pointer-events:auto;
+    }
+
+    .bank-modal-card{
+      position:relative;
+      width:min(520px,100%);
+      max-height:min(82vh,720px);
+      overflow:auto;
+      padding:34px 26px 28px;
+      border-radius:28px;
+      background:linear-gradient(180deg,#fffaf0,#f4ead6);
+      color:var(--ink);
+      border:1px solid rgba(213,173,85,.6);
+      box-shadow:0 28px 80px rgba(0,0,0,.38);
+      text-align:left;
+    }
+
+    .bank-modal-card h3{
+      margin:0 38px 8px 0;
+      color:var(--emerald-900);
+      font-family:"Great Vibes",cursive;
+      font-size:2.8rem;
+      font-weight:400;
+      line-height:1;
+    }
+
+    .bank-modal-card .bank-note{
+      margin:0 0 22px;
+      color:#52665f;
+      line-height:1.45;
+      font-size:1rem;
+    }
+
+    .bank-row{
+      display:grid;
+      grid-template-columns:minmax(120px,.8fr) minmax(0,1.2fr);
+      gap:14px;
+      padding:12px 0;
+      border-bottom:1px solid rgba(6,55,45,.12);
+      align-items:start;
+    }
+
+    .bank-row:last-of-type{
+      border-bottom:0;
+    }
+
+    .bank-label{
+      font-family:Montserrat,sans-serif;
+      font-size:.65rem;
+      line-height:1.45;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--burnt-dark);
+      font-weight:600;
+    }
+
+    .bank-value{
+      font-size:1.08rem;
+      line-height:1.35;
+      color:var(--emerald-900);
+      overflow-wrap:anywhere;
+    }
+
+    .close-bank{
+      position:absolute;
+      right:14px;
+      top:12px;
+      width:38px;
+      height:38px;
+      border:0;
+      border-radius:50%;
+      cursor:pointer;
+      color:var(--emerald-900);
+      background:rgba(6,55,45,.08);
+      font-size:1.45rem;
+      line-height:1;
+    }
+
+    .copy-bank{
+      width:100%;
+      margin-top:24px;
+      padding:12px 16px;
+      border:1px solid rgba(6,55,45,.22);
+      border-radius:999px;
+      background:var(--emerald-900);
+      color:white;
+      cursor:pointer;
+      font-family:Montserrat,sans-serif;
+      font-size:.67rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+
+    @media (max-width:430px){
+      .bank-row{
+        grid-template-columns:1fr;
+        gap:3px;
+      }
+    }
+
+
+    /* MUSIC CONTROL */
+    .music-button{
+      position:fixed;
+      right:16px;
+      top:calc(16px + env(safe-area-inset-top));
+      z-index:60;
+      display:none;
+      align-items:center;
+      gap:8px;
+      border:1px solid rgba(213,173,85,.52);
+      color:var(--gold-soft);
+      background:rgba(3,38,31,.84);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      border-radius:999px;
+      padding:11px 14px;
+      box-shadow:0 10px 28px rgba(0,0,0,.22);
+      cursor:pointer;
+      font-family:Montserrat,sans-serif;
+      font-size:.62rem;
+      text-transform:uppercase;
+      letter-spacing:.09em;
+    }
+
+    .music-button.show{display:flex}
+    .music-button .icon{font-size:.95rem}
+
+    @media (min-width:700px){
+      section{padding:110px 30px}
+      .gold-frame{inset:34px}
+      .event-card{padding:52px 40px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *,*::before,*::after{
+        animation:none!important;
+        transition:none!important;
+        scroll-behavior:auto!important;
+      }
+    }
+  </style>
+</head>
+
+<body class="locked">
+
+  <div id="intro">
+    <div class="intro-inner">
+      <div class="pretitle">A Wedding Invitation</div>
+
+      <div class="envelope-wrap" id="envelopeButton" role="button" tabindex="0" aria-label="Tap to open wedding invitation">
+        <div class="envelope">
+          <div class="letter-preview">
+            <div class="small">Together with their families</div>
+            <div class="names">Morris & Roberta</div>
+            <div class="date">18 · 10 · 2026</div>
+          </div>
+          <div class="flap"></div>
+          <div class="seal">M&R</div>
+        </div>
+      </div>
+
+      <div class="tap-label">Tap to open</div>
+    </div>
+  </div>
+
+
+  <button class="music-button" id="musicButton" type="button" aria-label="Pause wedding music">
+    <span class="icon" id="musicIcon">❚❚</span>
+    <span id="musicLabel">Pause Music</span>
+  </button>
+
+  <audio id="weddingMusic" preload="none" loop>
+    <source src="first-time.mp3" type="audio/mpeg">
+  </audio>
+
+
+  <div class="bank-modal" id="bankModal" aria-hidden="true">
+    <div class="bank-modal-card" role="dialog" aria-modal="true" aria-labelledby="bankModalTitle">
+      <button class="close-bank" id="closeBankDetails" type="button" aria-label="Close banking details">×</button>
+
+      <h3 id="bankModalTitle">Banking Details</h3>
+      <p class="bank-note">For those who wish to send a monetary gift to Morris & Roberta.</p>
+
+      <div class="bank-row">
+        <div class="bank-label">Account Name</div>
+        <div class="bank-value">Morris Anderson and Roberta Bernard</div>
+      </div>
+
+      <div class="bank-row">
+        <div class="bank-label">Bank Name</div>
+        <div class="bank-value">Scotia Bank</div>
+      </div>
+
+      <div class="bank-row">
+        <div class="bank-label">Branch / Transit No.</div>
+        <div class="bank-value">50765</div>
+      </div>
+
+      <div class="bank-row">
+        <div class="bank-label">Account Type</div>
+        <div class="bank-value">Savings</div>
+      </div>
+
+      <div class="bank-row">
+        <div class="bank-label">Branch</div>
+        <div class="bank-value">Scotia Center</div>
+      </div>
+
+      <div class="bank-row">
+        <div class="bank-label">Account Number</div>
+        <div class="bank-value">001042988</div>
+      </div>
+
+      <div class="bank-row">
+        <div class="bank-label">Currency</div>
+        <div class="bank-value">JMD</div>
+      </div>
+
+      <button class="copy-bank" id="copyBankDetails" type="button">Copy Banking Details</button>
+    </div>
+  </div>
+
+  <main id="invitation">
+
+    <header class="hero">
+      <div class="gold-frame"></div>
+
+      <div class="hero-content">
+        <div class="eyebrow fade-up">Together with their families</div>
+
+        <p class="formal-names fade-up">
+          Morris Anderson and Roberta Bernard
+        </p>
+
+        <h1 class="fade-up">
+          Morris
+          <span class="amp">&</span>
+          Roberta
+        </h1>
+
+        <p class="invitation-copy fade-up">
+          cordially invite you to share in this esteemed occasion as we begin our life together and start our journey as soldiers in God’s army.
+        </p>
+
+        <div class="scroll-cue fade-up">
+          Sunday · October 18 · 2026
+          <span class="chev">⌄</span>
+        </div>
+      </div>
+    </header>
+
+    <section id="ceremony">
+      <div class="section-inner">
+        <div class="ornament fade-up">✦ ✦ ✦</div>
+        <div class="section-kicker fade-up">The Ceremony</div>
+        <h2 class="fade-up">Join us as we say “I do”</h2>
+
+        <div class="event-card fade-up">
+          <div class="day">Sunday</div>
+
+          <div class="date-big">
+            <span class="month">October</span>
+            <span class="number">18</span>
+            <span class="year">2026</span>
+          </div>
+
+          <div class="time">Twelve o’clock in the afternoon</div>
+
+          <div class="venue">Seaview Gardens SDA</div>
+
+          <p class="address">
+            51 Pacific Boulevard<br>
+            Seaview Gardens, Kingston 11
+          </p>
+
+          <a class="directions"
+             href="https://www.google.com/maps/search/?api=1&query=Seaview+Gardens+SDA+51+Pacific+Boulevard+Seaview+Gardens+Kingston+11+Jamaica"
+             target="_blank"
+             rel="noopener">
+             View Directions ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-section">
+      <div class="section-inner">
+        <div class="photo-frame fade-up">
+          <img src="morris-roberta-photo.jpeg" alt="Morris Anderson and Roberta Bernard">
+        </div>
+        <div class="photo-caption fade-up">Two lives, one journey.</div>
+      </div>
+    </section>
+
+    <section class="reception" id="reception">
+      <div class="section-inner">
+        <div class="ornament fade-up">✦ ✦ ✦</div>
+        <div class="section-kicker fade-up">Reception to Follow</div>
+        <h2 class="fade-up">Celebrate with us</h2>
+
+        <div class="event-card fade-up">
+          <div class="day">Following the Ceremony</div>
+          <div class="time">Reception</div>
+
+          <div class="venue">65 Sandhurst Crescent</div>
+
+          <p class="address">
+            off East King’s House Road<br>
+            Kingston 6, Barbican
+          </p>
+
+          <a class="directions"
+             href="https://www.google.com/maps/search/?api=1&query=65+Sandhurst+Crescent+East+Kings+House+Road+Kingston+6+Barbican+Jamaica"
+             target="_blank"
+             rel="noopener">
+             View Directions ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="scripture">
+      <div class="section-inner">
+        <div class="section-kicker fade-up">Our Foundation</div>
+
+        <blockquote class="fade-up">
+          “Husbands, love your wives, just as Christ loved the church and gave himself up for her.”
+          <cite>Ephesians 5:25 · NIV</cite>
+        </blockquote>
+      </div>
+    </section>
+
+
+    <section class="gift-section">
+      <div class="section-inner">
+        <div class="ornament fade-up">✦ ✦ ✦</div>
+        <div class="section-kicker fade-up">Wedding Gifts</div>
+        <h2 class="fade-up">For those who wish to bless the couple</h2>
+
+        <div class="gift-card fade-up">
+          <p>
+            Your presence is truly appreciated. For guests who would like to send a monetary gift,
+            the couple’s banking details are available below.
+          </p>
+
+          <button class="bank-button" id="openBankDetails" type="button">
+            View Banking Details
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="section-inner">
+        <div class="ornament fade-up">✦ ✦ ✦</div>
+
+        <h2 class="fade-up">
+          We’re not planning a wedding.
+          <em>We’re planning a marriage and throwing a party.</em>
+        </h2>
+
+        <div class="signature fade-up">Morris & Roberta</div>
+        <div class="footer-date fade-up">18 · October · 2026</div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const intro = document.getElementById('intro');
+    const envelope = document.getElementById('envelopeButton');
+    const main = document.getElementById('invitation');
+
+    const musicButton = document.getElementById('musicButton');
+    const musicLabel = document.getElementById('musicLabel');
+    const musicIcon = document.getElementById('musicIcon');
+    const weddingMusic = document.getElementById('weddingMusic');
+
+    const bankModal = document.getElementById('bankModal');
+    const openBankDetails = document.getElementById('openBankDetails');
+    const closeBankDetails = document.getElementById('closeBankDetails');
+    const copyBankDetails = document.getElementById('copyBankDetails');
+
+    let opened = false;
+    let fadeFrame = null;
+
+    function setMusicState(isPlaying){
+      if(isPlaying){
+        musicIcon.textContent = '❚❚';
+        musicLabel.textContent = 'Pause Music';
+        musicButton.setAttribute('aria-label','Pause wedding music');
+      }else{
+        musicIcon.textContent = '♪';
+        musicLabel.textContent = 'Play Music';
+        musicButton.setAttribute('aria-label','Play wedding music');
+      }
+    }
+
+    function fadeVolume(target, duration = 1800){
+      if(fadeFrame) cancelAnimationFrame(fadeFrame);
+
+      const start = performance.now();
+      const initial = weddingMusic.volume;
+
+      function step(now){
+        const progress = Math.min((now - start) / duration, 1);
+        weddingMusic.volume = initial + (target - initial) * progress;
+
+        if(progress < 1){
+          fadeFrame = requestAnimationFrame(step);
+        }else{
+          fadeFrame = null;
+        }
+      }
+
+      fadeFrame = requestAnimationFrame(step);
+    }
+
+    function tryStartMusic(){
+      weddingMusic.volume = 0.01;
+
+      try{
+        const playAttempt = weddingMusic.play();
+
+        if(playAttempt && typeof playAttempt.then === 'function'){
+          playAttempt.then(() => {
+            setMusicState(true);
+            fadeVolume(0.38, 2200);
+          }).catch(() => {
+            weddingMusic.volume = 0.38;
+            setMusicState(false);
+          });
+        }else{
+          setMusicState(true);
+          fadeVolume(0.38, 2200);
+        }
+      }catch(error){
+        weddingMusic.volume = 0.38;
+        setMusicState(false);
+      }
+    }
+
+    function toggleMusic(){
+      if(weddingMusic.paused){
+        weddingMusic.volume = 0.01;
+
+        const playAttempt = weddingMusic.play();
+        if(playAttempt && typeof playAttempt.then === 'function'){
+          playAttempt.then(() => {
+            setMusicState(true);
+            fadeVolume(0.38, 900);
+          }).catch(() => setMusicState(false));
+        }else{
+          setMusicState(true);
+          fadeVolume(0.38, 900);
+        }
+      }else{
+        weddingMusic.pause();
+        weddingMusic.volume = 0.38;
+        setMusicState(false);
+      }
+    }
+
+
+    function showBankModal(){
+      bankModal.classList.add('show');
+      bankModal.setAttribute('aria-hidden','false');
+      closeBankDetails.focus();
+    }
+
+    function hideBankModal(){
+      bankModal.classList.remove('show');
+      bankModal.setAttribute('aria-hidden','true');
+      openBankDetails.focus();
+    }
+
+    async function copyAllBankDetails(){
+      const details =
+`Account Name: Morris Anderson and Roberta Bernard
+Bank Name: Scotia Bank
+Branch / Transit Number: 50765
+Account Type: SAVINGS
+Branch: Scotia Center
+Account Number: 001042988
+Account Currency: JMD`;
+
+      try{
+        await navigator.clipboard.writeText(details);
+        const original = copyBankDetails.textContent;
+        copyBankDetails.textContent = 'Copied';
+        setTimeout(() => copyBankDetails.textContent = original, 1600);
+      }catch(error){
+        const area = document.createElement('textarea');
+        area.value = details;
+        area.style.position = 'fixed';
+        area.style.opacity = '0';
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand('copy');
+        area.remove();
+
+        const original = copyBankDetails.textContent;
+        copyBankDetails.textContent = 'Copied';
+        setTimeout(() => copyBankDetails.textContent = original, 1600);
+      }
+    }
+
+    function observeRevealElements(){
+      const items = document.querySelectorAll('.fade-up');
+
+      if(!('IntersectionObserver' in window)){
+        items.forEach(el => el.classList.add('visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.12});
+
+      items.forEach(el => observer.observe(el));
+    }
+
+    function openInvitation(){
+      if(opened) return;
+      opened = true;
+
+      // The audio file is separate from the HTML, so the browser fetches it
+      // independently. Calling play here keeps it tied to the user's tap.
+      tryStartMusic();
+
+      envelope.classList.add('is-opening');
+
+      setTimeout(() => {
+        intro.classList.add('opened');
+        document.body.classList.remove('locked');
+        main.classList.add('ready');
+        musicButton.classList.add('show');
+        observeRevealElements();
+      }, 1080);
+    }
+
+    envelope.addEventListener('click', openInvitation);
+
+    envelope.addEventListener('keydown', (event) => {
+      if(event.key === 'Enter' || event.key === ' '){
+        event.preventDefault();
+        openInvitation();
+      }
+    });
+
+    musicButton.addEventListener('click', toggleMusic);
+
+    openBankDetails.addEventListener('click', showBankModal);
+    closeBankDetails.addEventListener('click', hideBankModal);
+    copyBankDetails.addEventListener('click', copyAllBankDetails);
+
+    bankModal.addEventListener('click', (event) => {
+      if(event.target === bankModal) hideBankModal();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if(event.key === 'Escape' && bankModal.classList.contains('show')){
+        hideBankModal();
+      }
+    });
+
+    setMusicState(false);
+  </script>
+
+</body>
+</html>
